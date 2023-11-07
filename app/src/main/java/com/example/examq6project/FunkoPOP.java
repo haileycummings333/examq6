@@ -74,6 +74,8 @@ public final class FunkoPOP {
         this.price=price;
     }
 
+
+    //override to string method to show all the info for a FunkoPOP object
     @Override
     public String toString() {
         return "FunkoPOP{" +

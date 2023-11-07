@@ -36,16 +36,17 @@ public class MainActivity extends AppCompatActivity {
             boolean on = (selectedRadioId == R.id.radioButtonOn);
             String ultimate= editTextUltimate.getText().toString();
             double price = Double.parseDouble(editTextPrice.getText().toString());
-            // Insert the FunkoPOP object into the database
-            Uri contentUri = Provider.CONTENT_URI; // Use the correct content URI
+
+            Uri contentUri = Provider.CONTENT_URI;
             ContentResolver contentResolver = getContentResolver();
             ContentValues values = new ContentValues();
 
+            //put into database
             values.put(Provider.COLUMN_POP_NAME, popName);
             values.put(Provider.COLUMN_POP_NUMBER, popNumber);
             values.put(Provider.COLUMN_POP_TYPE, popType);
             values.put(Provider.COLUMN_FANDOM, fandom);
-            values.put(Provider.COLUMN_ON, on ? 1 : 0); // Convert boolean to 1 (true) or 0 (false)
+            values.put(Provider.COLUMN_ON, on ? 1 : 0);
             values.put(Provider.COLUMN_ULTIMATE, ultimate);
             values.put(Provider.COLUMN_PRICE, price);
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         editTextUltimate = findViewById(R.id.editTextUltimate);
         editTextPrice = findViewById(R.id.editTextPrice);
         buttonSubmit = findViewById(R.id.buttonSubmit);
-
+        //add lsitener to button
         buttonSubmit.setOnClickListener(listener);
     }
 
